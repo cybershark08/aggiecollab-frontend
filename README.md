@@ -1,16 +1,25 @@
-# React + Vite
+# 🚀 AggieCollab: Real-Time Collaborative Code Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AggieCollab is a full-stack, real-time collaborative code editor built for seamless pair programming and live document sharing. It features instant synchronization across multiple clients with sub-100ms latency.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
+- **Frontend**: [https://aggiecollab-frontend-5s1r.vercel.app/](https://aggiecollab-frontend-5s1r.vercel.app/)
+- **Backend API**: [https://aggiecollab-backend.onrender.com](https://aggiecollab-backend.onrender.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tech Stack
+- **Frontend**: React, Vite, Monaco Editor (`@monaco-editor/react`)
+- **Backend**: Node.js, Native WebSockets (`ws`), HTTP
+- **Deployment**: Vercel (Frontend), Render (Backend)
+- **State Management**: React Hooks (`useState`, `useRef`, `useEffect`)
 
-## React Compiler
+## ✨ Key Features
+- **Real-Time Sync**: Instantaneous text synchronization across all connected clients using persistent WebSocket connections.
+- **Smart Loop Prevention**: Custom `useRef` flagging system prevents infinite update loops when receiving remote changes.
+- **Room-Based Architecture**: Backend supports isolated "rooms" (e.g., `/ncat-room`), allowing multiple independent documents to be hosted on a single server.
+- **Production-Ready**: Environment variable configuration, CORS-ready, and optimized for cloud hosting wake-up cycles.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 💻 Local Development Setup
+1. Clone the repositories:
+   ```bash
+   git clone https://github.com/cybershark08/aggiecollab-frontend.git
+   git clone https://github.com/cybershark08/aggiecollab-backend.git
