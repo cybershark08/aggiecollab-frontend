@@ -8,8 +8,11 @@ function App() {
   const isRemoteUpdate = useRef(false);
 
   useEffect(() => {
-    // THIS IS THE ONLY WEBSOCKET DECLARATION (Using your ngrok URL)
-    const ws = new WebSocket('wss://aggiecollab-backend.on')
+    // PROFESSIONAL BEST PRACTICE: Use environment variable with a fallback
+    const backendUrl = import.meta.env.VITE_BACKEND_URL || 'wss://aggiecollab-backend.onrender.com';
+    const roomName = 'ncat-room';
+    
+    const ws = new WebSocket(`${backendUrl}/${roomName}`);
     wsRef.current = ws;
 
     ws.onopen = () => setIsConnected(true);
